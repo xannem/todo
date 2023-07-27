@@ -14,9 +14,7 @@ type Props = {
 export type User = GetUsersQuery["users"][0];
 
 function MessageDisplay({ userId, message }: Props) {
-  const [completeState, executeToogleComplete] = useMutation(
-    ToogleCompletedDocument
-  );
+  const [, executeToogleComplete] = useMutation(ToogleCompletedDocument);
 
   const completeTask = async () => {
     await executeToogleComplete({
@@ -26,7 +24,7 @@ function MessageDisplay({ userId, message }: Props) {
     return;
   };
 
-  const [deleteTaskState, executeDeleteTask] = useMutation(DeleteTaskDocument);
+  const [, executeDeleteTask] = useMutation(DeleteTaskDocument);
 
   const deleteTask = async () => {
     await executeDeleteTask({

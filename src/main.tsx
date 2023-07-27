@@ -1,6 +1,6 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { Client, Provider, cacheExchange, fetchExchange } from "urql";
+import { createRoot } from "react-dom/client";
 
 import App from "./App";
 
@@ -11,7 +11,7 @@ const client = new Client({
   exchanges: [cacheExchange, fetchExchange],
 });
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider value={client}>
       <App />

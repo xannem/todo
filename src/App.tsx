@@ -3,7 +3,7 @@ import { useQuery } from "urql";
 import { GetUsersDocument } from "./graphql/generated";
 
 function App() {
-  const [results, setResults] = useQuery({
+  const [results] = useQuery({
     query: GetUsersDocument,
   });
 

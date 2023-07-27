@@ -35,7 +35,7 @@ type NewNoteProps = {
 };
 
 export function NewNote({ show, setAddNewMessage, user }: NewNoteProps) {
-  const [addNewTaskState, executeAddNewTask] = useMutation(AddNewTaskDocument);
+  const [, executeAddNewTask] = useMutation(AddNewTaskDocument);
 
   const [newTaskInput, setNewTaskInput] = useState<string>("");
 
