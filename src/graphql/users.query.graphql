@@ -1,0 +1,44 @@
+query GetUsers {
+  users {
+    id
+    name
+    messages {
+      id
+      task
+      completed
+    }
+  }
+}
+
+mutation ToogleCompleted($id: Int!, $taskId: Int!) {
+  toogleCompleted(id: $id, taskId: $taskId) {
+    id
+    name
+    messages {
+      task
+      completed
+    }
+  }
+}
+
+mutation AddNewTask($id: Int!, $task: String!) {
+  addNewTask(id: $id, task: $task) {
+    id
+    name
+    messages {
+      task
+      completed
+    }
+  }
+}
+
+mutation DeleteTask($id: Int!, $taskId: Int!) {
+  deleteNewTask(id: $id, taskId: $taskId) {
+    id
+    name
+    messages {
+      task
+      completed
+    }
+  }
+}
